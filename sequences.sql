@@ -1,0 +1,10 @@
+drop sequence seq_products;
+create sequence seq_products start with 1 increment by 1;
+drop sequence seq_countries;
+create sequence seq_countries start with 1 increment by 1;
+drop sequence seq_customers;
+create sequence seq_customers start with 1 increment by 1;
+drop sequence seq_orders;
+create sequence seq_orders start with 1 increment by 1;
+drop sequence seq_invoice_orders;
+create sequence seq_invoice_orders start with 1 increment by 1;
