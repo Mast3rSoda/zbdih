@@ -13,12 +13,16 @@ create or replace package body order_pkg as
 			select *
 			  from temp
 		) loop
-
+            begin
             -- Sprawdzamy, czy kraj istnieje, jeśli nie -> dodajemy
 			select id
 			  into v_country_id
 			  from countries
-			 where country = temp_row.country;
+			 where country = temp_row.country
+             fetch first 1 row only;
+
+             EXCEPTION when no_data_found then
+            DBMS_OUTPUT.PUT_LINE('There are ' || in_stock || ' items in stock.');
           
 
             -- Sprawdzamy, czy klient istnieje, jeśli nie -> dodajemy
@@ -61,6 +65,7 @@ create or replace package body order_pkg as
 				v_invoice_no,
 				v_order_id
 			);
+            end;
 		end loop;
         EXCEPTION when no_data_found then
             DBMS_OUTPUT.PUT_LINE('There are ' || in_stock || ' items in stock.');
