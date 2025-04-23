@@ -1,0 +1,12 @@
+drop sequence seq_dim_products;
+create sequence seq_dim_products start with 1 increment by 1;
+drop sequence seq_dim_countries;
+create sequence seq_dim_countries start with 1 increment by 1;
+drop sequence seq_dim_customers;
+create sequence seq_dim_customers start with 1 increment by 1;
+drop sequence seq_dim_date;
+create sequence seq_dim_date start with 1 increment by 1;
+drop sequence seq_dim_invoices;
+create sequence seq_dim_invoices start with 1 increment by 1;
+drop sequence seq_fact_orders;
+create sequence seq_fact_orders start with 1 increment by 1;

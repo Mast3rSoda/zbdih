@@ -3,7 +3,7 @@ drop table products cascade constraints;
 
 create table products (
 	id          number(8) not null primary key,
-	stockcode   varchar2(15 char),
+	stockcode   varchar2(15 char) not null,
 	description varchar2(40 char)
 );
 
@@ -35,7 +35,7 @@ drop table invoices cascade constraints;
 
 create table invoices (
 	id          number(10) not null primary key,
-	invoiceno   varchar2(10 char) not null,
+	invoiceno   varchar2(10 char) not null unique,
 	invoicedate date not null,
 	cancelled   number(1) default 0 not null check ( cancelled in ( 0,1 ) ),
 	customerid  number(8),

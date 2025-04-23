@@ -8,5 +8,3 @@ drop sequence seq_invoices;
 create sequence seq_invoices start with 1 increment by 1;
 drop sequence seq_orders;
 create sequence seq_orders start with 1 increment by 1;
-
-select * from temp where INVOICEDATE is null;
